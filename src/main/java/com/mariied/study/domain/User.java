@@ -29,7 +29,7 @@ public class User implements UserDetails {
     @Column(length = 100, nullable = false, unique = true)
     private String email;
 
-    @Column(length = 30, nullable = false)
+    @Column(length =  200, nullable = false)
     private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)
@@ -43,7 +43,7 @@ public class User implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return password;
     }
 
     @Override

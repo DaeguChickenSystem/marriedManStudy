@@ -1,4 +1,4 @@
-package com.mariied.study.web;
+package com.mariied.study.controller;
 
 import com.mariied.study.dto.board.BoardRequestDto;
 import com.mariied.study.service.BoardService;
