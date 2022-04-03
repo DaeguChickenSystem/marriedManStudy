@@ -2,7 +2,9 @@ package com.mariied.study.controller;
 
 import com.mariied.study.dto.board.BoardRequestDto;
 import com.mariied.study.service.BoardService;
+import jdk.internal.vm.compiler.collections.EconomicMap;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,6 +56,46 @@ public class BoardController {
             if(result < 0) {
                 throw new Exception("#Exception boardWriteAction!");
             }
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+
+        return "redirect:/board/list";
+    }
+
+    @PostMapping("/board/view/action")
+    public String boardViewAction(Model model, BoardRequestDto boardRequestDto) throws Exception {
+
+        try {
+            int result = boardService.updateBoard(boardRequestDto);
+
+            if( result < 1 ) {
+                throw new Exception("#Exception boardViewAction!");
+            }
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+
+        return "redirect:/board/list";
+    }
+
+    @PostMapping("/board/view/delete")
+    public String boardViewDeleteAction(Model model, @RequestParam() Long id) throws Exception {
+
+        try {
+            boardService.deleteById(id);
+        } catch ( Exception e ) {
+            throw  new Exception(e.getMessage());
+        }
+
+        return "redirect:/board/list";
+    }
+
+    @PostMapping("/board/delete")
+    public String boardDeleteAction(Model model, @RequestParam() Long[] deleteId) throws Exception {
+
+        try {
+            boardService.deleteAll(deleteId);
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
