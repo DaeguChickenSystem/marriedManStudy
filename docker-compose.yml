@@ -3,11 +3,11 @@ services:
   mariadb:
     image: mariadb
     environment:
-      MYSQL_DATABASE: springbootapp
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testDb
+      MYSQL_ROOT_PASSWORD: 1234
       MYSQL_ROOT_HOST: '%'
     ports:
-      - 3306:3306
+      - 3307:3307
 
   redis:
     image: redis

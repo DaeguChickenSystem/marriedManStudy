@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Counter from "./counter";
 
 const Main = styled.div`
 	display: flex;
@@ -13,7 +14,7 @@ const Main = styled.div`
 const Index: React.FC = () => {
   return (
       <div>
-        <Main>안녕하세요 styled-components 적용 완료~~!</Main>
+       <Counter/>
       </div>
   );
 };
