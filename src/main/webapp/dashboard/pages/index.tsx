@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Counter from "./counter";
-
+import  Login from './login';
 const Main = styled.div`
 	display: flex;
 	justify-content: center;
@@ -14,7 +13,7 @@ const Main = styled.div`
 const Index: React.FC = () => {
   return (
       <div>
-       <Counter/>
+          <Login/>
       </div>
   );
 };
