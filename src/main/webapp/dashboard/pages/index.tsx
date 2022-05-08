@@ -1,20 +1,11 @@
 import React from "react";
-import styled from "styled-components";
-import  Login from './login';
-const Main = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100vh;
-	color: ${(props) => props.theme.MAIN_BLUE}; // theme.js에서 가져온것
-`;
+import Login from "./login/login";
 
 const Index: React.FC = () => {
-  return (
-      <div>
-          <Login/>
-      </div>
-  );
+	return (
+		<div>
+			<Login />
+		</div>
+	);
 };
 export default Index;
